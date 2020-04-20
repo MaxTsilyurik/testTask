@@ -1,6 +1,5 @@
 package com.example.test.controller;
 
-
 import com.example.test.domain.User;
 import com.example.test.service.UserServices;
 import javafx.util.Pair;
