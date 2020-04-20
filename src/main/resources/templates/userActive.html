@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Изменение статуса пользователя </title>
+</head>
+<body>
+
+<div>
+    <form th:action="@{/userActive}" th:object="${user}"  method="post">
+        <label>
+            <input type="text" name="id" th:field="*{id}" />
+        </label>
+        <label>
+            <input type="text" name="status" placeholder="status" />
+        </label>
+        <button type="submit">Изменить</button>
+    </form>
+</div>
+
+<p>Id пользователя</p>
+<div th:if="${id}">
+    <span th:text="${id}"></span>
+</div>
+
+<p>Новый статус</p>
+<div th:if="${newStat}">
+    <span th:text="${newStat}"></span>
+</div>
+
+<p>Старый статус</p>
+<div th:if="${oldStat}">
+    <span th:text="${oldStat}"></span>
+</div>
+
+<div th:if="${error}">
+    <span th:text="${error}"></span>
+</div>
+
+<a th:href="@{'/userInfo/' + ${user.id}}">User info</a>
+<a href="/userList">User list</a>
+
+
+
+</body>
+</html>
